@@ -1,9 +1,5 @@
 package by.mikevich.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
@@ -18,11 +14,25 @@ public class User {
     private String login;
     private String password;
 
+    private Role role;
+    private State state;
+
+    public User() {}
+    
     public User(String firstName, String lastName, String login, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
         this.password = password;
+    }
+
+    public User(String firstName, String lastName, String login, String password, Role role, State state) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.login = login;
+        this.password = password;
+        this.role = role;
+        this.state = state;
     }
 
     public Long getId() {
@@ -63,5 +73,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
     }
 }
