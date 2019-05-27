@@ -17,14 +17,12 @@ public class LoginController {
 
     @GetMapping("/login")
     public String getLoginPage(HttpServletRequest request, ModelMap model, Authentication authentication) {
-
         if(authentication != null) {
             return "redirect:/";
         }
         if(request.getParameterMap().containsKey("error")) {
             model.addAttribute("error", true);
         }
-
         return "login";
     }
 }

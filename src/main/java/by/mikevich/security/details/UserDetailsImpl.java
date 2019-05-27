@@ -2,6 +2,7 @@ package by.mikevich.security.details;
 
 import by.mikevich.models.State;
 import by.mikevich.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

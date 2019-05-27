@@ -1,7 +1,6 @@
 package by.mikevich.controllers;
 
 import by.mikevich.forms.UserForm;
-import by.mikevich.repositories.UsersRepository;
 import by.mikevich.services.SignUpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
