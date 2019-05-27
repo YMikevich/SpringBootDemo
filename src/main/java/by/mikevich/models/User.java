@@ -1,7 +1,5 @@
 package by.mikevich.models;
 
-import lombok.Builder;
-
 import javax.persistence.*;
 
 @Entity
@@ -14,18 +12,20 @@ public class User {
     private String firstName;
     private String lastName;
     private String login;
-    private String password;
+    private String hashPassword;
 
+    @Enumerated(value = EnumType.STRING)
     private Role role;
+    @Enumerated(value = EnumType.STRING)
     private State state;
 
     public User() {}
 
-    public User(String firstName, String lastName, String login, String password, Role role, State state) {
+    public User(String firstName, String lastName, String login, String hashPassword, Role role, State state) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
-        this.password = password;
+        this.hashPassword = hashPassword;
         this.role = role;
         this.state = state;
     }
@@ -62,12 +62,12 @@ public class User {
         this.login = login;
     }
 
-    public String getPassword() {
-        return password;
+    public String getHashPassword() {
+        return hashPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setHashPassword(String hashPassword) {
+        this.hashPassword = hashPassword;
     }
 
     public Role getRole() {

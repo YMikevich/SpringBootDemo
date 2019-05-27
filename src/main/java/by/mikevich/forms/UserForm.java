@@ -6,7 +6,7 @@ import by.mikevich.models.State;
 public class UserForm {
     private String firstName;
     private String lastName;
-    private String passWord;
+    private String password;
     private String login;
     private Role role;
     private State state;
@@ -27,12 +27,12 @@ public class UserForm {
         this.lastName = lastName;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getLogin() {
