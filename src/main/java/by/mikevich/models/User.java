@@ -1,5 +1,7 @@
 package by.mikevich.models;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,13 +20,6 @@ public class User {
     private State state;
 
     public User() {}
-    
-    public User(String firstName, String lastName, String login, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.login = login;
-        this.password = password;
-    }
 
     public User(String firstName, String lastName, String login, String password, Role role, State state) {
         this.firstName = firstName;

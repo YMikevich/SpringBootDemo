@@ -2,29 +2,30 @@
 <html lang="en">
 <head>
     <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
-    <title>Sign Up</title>
+    <title>Login</title>
 </head>
 <body>
+<#if error??>
+    <div class="form-style-2-heading">
+        Incorrect login or password!
+    </div>
+</#if>
 <div class="form-style-2">
     <div class="form-style-2-heading">
-        Sign Up!
+        Please Login!
     </div>
-    <form method="post" action="/signUp">
-        <label for="login">Login
+    <form method="post" action="/login">
+        <label for="login">Логин
             <input class="input-field" type="text" id="login" name="login">
         </label>
         <br>
-        <label for="password">Password
+        <label for="password">Пароль
             <input class="input-field" type="password" id="password" name="password">
         </label>
         <br>
-        <label for="first-name">Name
-            <input class="input-field"  id="first-name" name="firstName">
-        </label>
-        <br>
-        <label for="last-name">Surname
-            <input class="input-field"  id="last-name" name="lastName">
-        </label>
+        <label for="remember-me">
+            <input type="checkbox" id="remember-me" name="remember-me">Запомнить меня</label>
+        <input type="submit" value="Login">
     </form>
 </div>
 </body>

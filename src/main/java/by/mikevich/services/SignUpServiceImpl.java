@@ -17,7 +17,7 @@ public class SignUpServiceImpl implements SignUpService {
     @Override
     public void signUp(UserForm form) {
 
-        usersRepository.save(new User(form.getFirstName(), form.getLastName(), form.getLogin(),
-                form.getPassWord(), Role.USER, State.ACTIVE));
+        User user = new User(form.getFirstName(), form.getLastName(),
+                form.getLogin(), form.getPassWord(), Role.USER, State.ACTIVE);
     }
 }
