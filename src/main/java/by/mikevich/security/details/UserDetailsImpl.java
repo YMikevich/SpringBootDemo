@@ -2,7 +2,7 @@ package by.mikevich.security.details;
 
 import by.mikevich.models.State;
 import by.mikevich.models.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +14,7 @@ public class UserDetailsImpl implements UserDetails {
 
     private User user;
 
-    public UserDetailsImpl(User user) {
+    public UserDetailsImpl(final User user) {
         this.user = user;
     }
 
@@ -54,5 +54,9 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public boolean isEnabled() {
         return user.getState().equals(State.ACTIVE);
+    }
+
+    public User getUser() {
+        return user;
     }
 }

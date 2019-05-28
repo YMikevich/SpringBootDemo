@@ -1,15 +1,10 @@
 package by.mikevich.forms;
 
-import by.mikevich.models.Role;
-import by.mikevich.models.State;
-
 public class UserForm {
+    private String login;
+    private String password;
     private String firstName;
     private String lastName;
-    private String password;
-    private String login;
-    private Role role;
-    private State state;
 
     public String getFirstName() {
         return firstName;
@@ -41,21 +36,5 @@ public class UserForm {
 
     public void setLogin(String login) {
         this.login = login;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public State getState() {
-        return state;
-    }
-
-    public void setState(State state) {
-        this.state = state;
     }
 }

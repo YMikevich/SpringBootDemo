@@ -12,11 +12,15 @@ import java.util.List;
 @Controller
 public class UsersController {
 
+    private final UsersRepository usersRepository;
+
     @Autowired
-    private UsersRepository usersRepository;
+    public UsersController(UsersRepository usersRepository) {
+        this.usersRepository = usersRepository;
+    }
 
     @GetMapping("/users")
-    public String getAllUsers(Model model) {
+    public String getAllUsers(final Model model) {
         List<User> users = usersRepository.findAll();
         model.addAttribute("usersFromServer", users);
 

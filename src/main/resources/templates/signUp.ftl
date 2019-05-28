@@ -9,7 +9,13 @@
     <div class="form-style-2-heading">
         Sign Up!
     </div>
+    <#if error??>
+        <div class="form-style-2">
+            Login already exists!
+        </div>
+    </#if>
     <form method="post" action="/signUp">
+
         <label for="login">Login
             <input class="input-field" type="text" id="login" name="login" maxlength="50">
         </label>
